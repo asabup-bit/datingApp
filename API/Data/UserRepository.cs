@@ -67,9 +67,14 @@ namespace API.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public void update(AppUser user)
+        public void Update(AppUser user)
         {
             _context.Entry(user).State = EntityState.Modified;
+        }
+
+        public void Update(ActionResult<AppUser> user)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

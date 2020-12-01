@@ -11,22 +11,18 @@ import { MembersService } from 'src/app/_services/members.service';
 })
 export class MemberListComponent implements OnInit {
 
-  members: Member[] = [];
+  members$!: Observable<Member[]>;
   constructor( private memberServices:MembersService) {
    }
 
   ngOnInit(): void {
 
-   this.loadMember();
+   this.members$ =this.memberServices.getMembers();
   }
 
-  loadMember(){
-   
-  this.memberServices.getMembers().subscribe( members =>{
-      
-     this.members =members;
+  
     //console.log(this.members.length);
-    });
+   
     // this.members.push({
     //   knowAs: 'bikash'
     // });
@@ -37,6 +33,6 @@ export class MemberListComponent implements OnInit {
   }
 
  
-  }
+  
 
 

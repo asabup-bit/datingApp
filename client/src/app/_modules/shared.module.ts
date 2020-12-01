@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
+import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+//import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -16,13 +18,15 @@ import { NgxGalleryModule } from '@kolkov/ngx-gallery';
     ToastrModule.forRoot({
       positionClass:'toast-bottom-right'
     }),
-    NgxGalleryModule
+    NgxGalleryModule,
+   // NgxSpinnerModule,
 
   ],
   exports:[
     BsDropdownModule,
     ToastrModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+   // NgxSpinnerModule
     
   ]
 })

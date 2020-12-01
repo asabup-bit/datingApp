@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,} from '@angular/core';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+//import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,9 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { BusyComponent } from './_services/busy/busy.component';
+//import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -44,6 +48,8 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
+    MemberEditComponent,
+    BusyComponent,
    // InterceptorComponent,
    
   ],
@@ -56,8 +62,11 @@ import { JwtInterceptor } from './_interceptors/jwt.interceptor';
     FormsModule,
     BrowserAnimationsModule,
     SharedModule,
+  
+    
     
   ],
+//  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true},
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}
