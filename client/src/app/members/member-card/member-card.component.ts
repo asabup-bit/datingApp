@@ -12,7 +12,7 @@ export class MemberCardComponent implements OnInit {
 
   constructor() { 
     //this.member = member;
-    console.log(this.member);
+   // console.log(this.member);
   }
 
   ngOnInit(): void {

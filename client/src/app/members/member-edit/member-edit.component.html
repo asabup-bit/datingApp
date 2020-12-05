@@ -24,11 +24,11 @@
                 </div>
                 <div>
                     <strong>Last seen </strong>
-                    <p>{{member?.lastActive}}</p>
+                    <p>{{member?.lastActive | timeago}}</p>
                 </div>
                 <div>
                     <strong>Created at</strong>
-                    <p>{{member?.created}}</p>
+                    <p>{{member?.created | date: 'dd MMMM YYYY'}}</p>
                 </div>
              </div>
              <div class="card-footer">
@@ -61,9 +61,9 @@
               </ng-template> 
             </li>
             <li [ngbNavItem]="2">
-              <a ngbNavLink>Interests</a>
+              <a ngbNavLink>Edit-photo</a>
               <ng-template ngbNavContent>
-               <p>photo edit will go from here</p>
+              <app-photo-editor [member]="member"></app-photo-editor>
               </ng-template>
             </li>
             
