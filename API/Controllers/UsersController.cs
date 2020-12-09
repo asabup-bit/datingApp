@@ -36,7 +36,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
             var user =await _userRepository.GetUserByUsernameAsync(User.GetUsername());
-            userParams.CurrentUserName =user.Value.UserName;
+            userParams.CurrentUsername =user.Value.UserName;
 
             if(string.IsNullOrEmpty(userParams.Gender))
             {
